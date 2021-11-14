@@ -6,8 +6,16 @@ export const useStyles = makeStyles(() => ({
     width: "auto",
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
+    padding: theme.spacing(2),
     backgroundColor: theme.palette.background.default,
     color: theme.palette.text.primary,
+    '& p': {
+      color: 'white',
+      '& span': {
+        color: 'grey',
+      },
+    },
+    fontSize: theme.typography.fontSize,
   },
   paper: {
     marginTop: theme.spacing(3),

@@ -7,4 +7,7 @@ export const theme = createTheme({
     primary: green,
     secondary: green,
   },
+  typography: {
+    fontSize: 30,
+  }
 });
