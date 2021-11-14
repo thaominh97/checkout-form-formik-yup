@@ -1,8 +1,28 @@
 import React, {useState} from 'react';
 import {Step, StepLabel, Stepper, Typography} from '@mui/material';
-import {Wrapper} from '../components/layout'
+import {Wrapper} from '../components/layout';
+import {Formik, Form } from 'formik';
 
-const steps = ["Info Customer", "PaymentMethod", "Confirm Info"];
+import initialValues from '../utils/initial_values';
+import {BillingForm, OrderSummary, PaymentMethodForm, ConfirmOrder} from '../components/organism';
+
+const steps = ["Order Summary", "Info Customer", "PaymentMethod", "Confirm Info"];
+
+function _renderStepContent(step: number) {
+  switch (step) {
+    case 0:
+      return <OrderSummary />;
+    case 1:
+      return <BillingForm />;
+    case 2:
+      return <PaymentMethodForm />;
+    case 3:
+      return <ConfirmOrder />;
+    default:
+      return <div>Not Found</div>;
+  }
+}
+
 export const CheckoutPage: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
 
@@ -17,6 +37,12 @@ export const CheckoutPage: React.FC = () => {
             <StepLabel><p>{label}</p></StepLabel>
           </Step> ))}
       </Stepper>
+
+      <Formik initialValues={{initialValues}} onSubmit={()=> {}}>
+        <Form>
+          {_renderStepContent(activeStep)}
+        </Form>
+      </Formik>
     </Wrapper>
   )
 }

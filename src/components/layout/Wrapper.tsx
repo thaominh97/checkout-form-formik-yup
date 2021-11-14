@@ -5,7 +5,6 @@ export const Wrapper: React.FC<{children: ReactNode}> = (props ) => {
   return (
     <div>
       <CssBaseline />
-
       <Paper>
         {props.children}
       </Paper>
