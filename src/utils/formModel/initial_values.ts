@@ -1,4 +1,4 @@
-import checkoutFormModel from './form_model';
+import {checkoutFormModel} from './form_model';
 
 const {
   formField: {
@@ -16,7 +16,7 @@ const {
   }
 } = checkoutFormModel;
 
-export default {
+export const initialValues = {
   [firstName.name]: '',
   [lastName.name]: '',
   [address1.name]: '',

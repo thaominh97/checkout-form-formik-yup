@@ -3,17 +3,18 @@ import {Step, StepLabel, Stepper, Typography} from '@mui/material';
 import {Wrapper} from '../components/layout';
 import {Formik, Form } from 'formik';
 
-import initialValues from '../utils/initial_values';
+import {initialValues, checkoutFormModel} from '../utils/index';
 import {BillingForm, OrderSummary, PaymentMethodForm, ConfirmOrder} from '../components/organism';
 
 const steps = ["Order Summary", "Info Customer", "PaymentMethod", "Confirm Info"];
 
+const { formField } = checkoutFormModel;
 function _renderStepContent(step: number) {
   switch (step) {
     case 0:
       return <OrderSummary />;
     case 1:
-      return <BillingForm />;
+      return <BillingForm formField={formField} />;
     case 2:
       return <PaymentMethodForm />;
     case 3:
