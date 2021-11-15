@@ -44,6 +44,18 @@ export const checkoutFormModel = {
       name: 'useAddressForPaymentDetails',
       label: 'Use this address for payment details'
     },
+    useMethodForPayment: {
+      name: 'useMethodForPayment',
+      label: 'Use method for payment'
+    },
+    useCashForPayment: {
+      name: 'useCashForPayment',
+      label: 'Use cash for payment'
+    },
+    useCardForPayment: {
+      name: 'useCardForPayment',
+      label: 'Use cart for payment'
+    },
     nameOnCard: {
       name: 'nameOnCard',
       label: 'Name on card*',

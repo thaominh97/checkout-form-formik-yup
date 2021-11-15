@@ -15,7 +15,7 @@ export const useStyles = makeStyles(() => ({
         color: 'grey',
       },
     },
-    fontSize: theme.typography.fontSize,
+    fontSize: "30px",
   },
   paper: {
     marginTop: theme.spacing(3),
@@ -25,6 +25,7 @@ export const useStyles = makeStyles(() => ({
       marginTop: "auto",
       marginBottom: "auto",
       padding: theme.spacing(3)
-    }
+    },
+    fontSize: "30px",
   }
 }))

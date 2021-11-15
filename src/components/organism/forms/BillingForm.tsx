@@ -2,7 +2,6 @@ import React from 'react';
 import {CheckboxField, InputField} from '../../atoms';
 import { FormikValues } from 'formik';
 import {Grid, Typography} from '@mui/material';
-// import { checkoutFormModel }  from '../../../utils/index';
 
 interface PropsType {
   formField?: FormikValues
@@ -82,13 +81,6 @@ export const BillingForm: React.FC<PropsType> = (props)  => {
             <InputField defaultProps={{
               name: country.name,
               label: country.label,
-              fullWidth: true}}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <InputField defaultProps={{
-              name: lastName.name,
-              label: lastName.label,
               fullWidth: true}}
             />
           </Grid>

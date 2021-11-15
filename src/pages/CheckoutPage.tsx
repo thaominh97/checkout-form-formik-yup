@@ -7,18 +7,16 @@ import { useAppStyles } from '../styles/App.styles';
 import {initialValues, checkoutFormModel, validationSchema} from '../utils';
 import {BillingForm, OrderSummary, PaymentMethodForm, ConfirmOrder, CheckoutSuccess} from '../components/organism';
 
-const steps = ["Order Summary", "Billing Info", "PaymentMethod", "Confirm Order"];
+const steps = ["Billing Info", "PaymentMethod", "Confirm Order"];
 
 const { formField } = checkoutFormModel;
 function _renderStepContent(step: number) {
   switch (step) {
     case 0:
-      return <OrderSummary />;
+      return <BillingForm formField={formField}/>;
     case 1:
-      return <BillingForm formField={formField} />;
-    case 2:
       return <PaymentMethodForm formField={formField} />;
-    case 3:
+    case 2:
       return <ConfirmOrder />;
     default:
       return <div>Not Found</div>;
@@ -41,7 +39,7 @@ export const CheckoutPage: React.FC = () => {
     actions: FormikHelpers<FormikValues>
   ) => {
     await sleep(1000)
-    alert(JSON.stringify(values, null, 2))
+    alert(JSON.stringify('Order is success', null, 2))
     actions.setSubmitting(false)
     setActiveStep((prev) => prev + 1)
   }
@@ -61,10 +59,10 @@ export const CheckoutPage: React.FC = () => {
 
   return (
     <Wrapper>
-      <Typography>
+      <Typography variant="h4" gutterBottom>
         Checkout
       </Typography>
-      <Stepper style={{paddingBottom: "20px"}} activeStep={activeStep}>
+      <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel><p>{label}</p></StepLabel>

@@ -1,20 +1,20 @@
-import {makeStyles} from '@mui/material';
+import {makeStyles} from '@mui/styles';
 
 
-export const useAppStyles = makeStyles((theme) => ({
+export const useAppStyles = makeStyles(() => ({
   stepper: {
-    padding: theme.spacing(3),
+    padding: "30px 0 50px 0",
   },
   buttons: {
     display: "flex",
     justifyContent: "flex-end",
   },
   button: {
-    marginTop: theme.spacing(3),
-    marginLeft: theme.spacing(1),
+    marginTop:  "30px",
+    marginLeft:  "10px",
   },
   wrapper: {
-    margin: theme.spacing(1),
+    margin: "10px",
     position: "relative",
   },
   buttonProgress: {

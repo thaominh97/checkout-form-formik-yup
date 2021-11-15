@@ -1,10 +1,11 @@
 import {CheckoutPage} from './pages/CheckoutPage';
 import './styles/index.css';
+import {Container} from '@mui/material';
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
       <CheckoutPage />
-    </div>
+    </Container>
   );
 }
 
