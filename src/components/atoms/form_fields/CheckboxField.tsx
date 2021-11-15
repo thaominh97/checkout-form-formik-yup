@@ -8,7 +8,11 @@ import {
   FormHelperText
 } from '@mui/material';
 
-export const CheckboxField: React.FC = (props) => {
+interface PropsType {
+  label: string;
+  name: string;
+}
+export const CheckboxField: React.FC<PropsType> = (props) => {
   const { label, ...rest } = props;
   const [field, meta, helper] = useField(props);
   const { setValue } = helper;

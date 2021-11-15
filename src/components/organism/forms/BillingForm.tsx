@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import {InputField} from '../../atoms';
+import React from 'react';
+import {CheckboxField, InputField} from '../../atoms';
 import { FormikValues } from 'formik';
 import {Grid, Typography} from '@mui/material';
 // import { checkoutFormModel }  from '../../../utils/index';
@@ -14,13 +14,12 @@ export const BillingForm: React.FC<PropsType> = (props)  => {
       firstName,
       lastName,
       address1,
+      address2,
       city,
+      state,
       zipcode,
       country,
-      nameOnCard,
-      cardNumber,
-      expiryDate,
-      cvv
+      useAddressForPaymentDetails
     }
   } = props;
 
@@ -45,36 +44,52 @@ export const BillingForm: React.FC<PropsType> = (props)  => {
             />
           </Grid>
           <Grid item xs={12}>
-            <InputField name={address1.name} label={address1.label} fullWidth />
+            <InputField defaultProps={{
+              name: address1.name,
+              label: address1.label,
+              fullWidth: true}}
+            />
           </Grid>
           <Grid item xs={12}>
-            <InputField name={address2.name} label={address2.label} fullWidth />
+            <InputField defaultProps={{
+              name: address2.name,
+              label: address2.label,
+              fullWidth: true}}
+            />
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <SelectField
-              name={city.name}
-              label={city.label}
-              data={cities}
-              fullWidth
+          <Grid item xs={12}>
+            <InputField defaultProps={{
+              name: city.name,
+              label: city.label,
+              fullWidth: true}}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <SelectField
-              name={state.name}
-              label={state.label}
-              data={states}
-              fullWidth
+            <InputField defaultProps={{
+              name: state.name,
+              label: state.label,
+              fullWidth: true}}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <InputField name={zipcode.name} label={zipcode.label} fullWidth />
+            <InputField defaultProps={{
+              name: zipcode.name,
+              label: zipcode.label,
+              fullWidth: true}}
+            />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <SelectField
-              name={country.name}
-              label={country.label}
-              data={countries}
-              fullWidth
+            <InputField defaultProps={{
+              name: country.name,
+              label: country.label,
+              fullWidth: true}}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <InputField defaultProps={{
+              name: lastName.name,
+              label: lastName.label,
+              fullWidth: true}}
             />
           </Grid>
           <Grid item xs={12}>

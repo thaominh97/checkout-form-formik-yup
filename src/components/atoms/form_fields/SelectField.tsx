@@ -6,10 +6,16 @@ import {
   FormControl,
   Select,
   MenuItem,
-  FormHelperText
+  FormHelperText, TextFieldProps
 } from '@mui/material';
 
-export const SelectField: React.FC = (props) => {
+interface PropsType {
+  data: Array<{ label: string; value: string }>;
+  label: string;
+  name: string;
+  fullWidth?: boolean;
+}
+export const SelectField: React.FC<PropsType> = (props) => {
   const { label, data, ...rest } = props;
   const [field, meta] = useField(props);
   const { value: selectedValue } = field;
